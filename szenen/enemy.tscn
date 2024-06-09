@@ -77,7 +77,7 @@ animations = [{
 radius = 530.961
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_djksb"]
-size = Vector2(72, 27.6408)
+size = Vector2(72, 131.641)
 
 [node name="enemy" type="CharacterBody2D"]
 script = ExtResource("1_oobcf")
@@ -99,7 +99,7 @@ position = Vector2(4, -40)
 shape = SubResource("CircleShape2D_djl2h")
 
 [node name="shape" type="CollisionShape2D" parent="."]
-position = Vector2(4, 5.8204)
+position = Vector2(4, -46.1796)
 shape = SubResource("RectangleShape2D_djksb")
 
 [connection signal="body_entered" from="detection_area" to="." method="_on_detection_area_body_entered"]
