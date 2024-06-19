@@ -3,7 +3,7 @@ extends CharacterBody2D
 const SPEED = 500
 const JUMP_VELOCITY = -450
 var attack_range = false
-var cooldown = true
+var damage_cooldown = true
 var health = 100
 
 
@@ -61,12 +61,12 @@ func _on_player_hitbox_body_exited(body):
 		attack_range = false
 
 func enemy_attack():
-	if attack_range and cooldown == true:
+	if attack_range and damage_cooldown == true:
 		health = health - 20
-		cooldown = false
-		$cooldown.start()
+		damage_cooldown = false
+		$damage_cooldown.start()
 		print ("health: " + str(health))
 
 
 func _on_cooldown_timeout():
-	cooldown = true
+	damage_cooldown = true

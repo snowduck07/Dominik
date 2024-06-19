@@ -221,8 +221,8 @@ position_smoothing_speed = 8.0
 position = Vector2(0, -24)
 shape = SubResource("CapsuleShape2D_g0dxj")
 
-[node name="cooldown" type="Timer" parent="."]
+[node name="damage_cooldown" type="Timer" parent="."]
 
 [connection signal="body_entered" from="player_hitbox" to="." method="_on_player_hitbox_body_entered"]
 [connection signal="body_exited" from="player_hitbox" to="." method="_on_player_hitbox_body_exited"]
-[connection signal="timeout" from="cooldown" to="." method="_on_cooldown_timeout"]
+[connection signal="timeout" from="damage_cooldown" to="." method="_on_cooldown_timeout"]
