@@ -5,9 +5,6 @@ const JUMP_VELOCITY = -450
 var attack_range = false
 var damage_cooldown = true
 var health = 100
-
-
-# Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 
@@ -16,7 +13,7 @@ func _physics_process(delta):
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
-
+	
 	# Get the input direction and handle the movement/deceleration.
 	var direction = Input.get_action_strength("walk_right") - Input.get_action_strength("walk_left")
 	
@@ -40,15 +37,13 @@ func _physics_process(delta):
 	if not is_on_floor():
 		velocity.y += gravity * delta
 		$AnimatedSprite2D.play("jump")
-
+	
 	move_and_slide()
 	enemy_attack()
+	
 	if health <= 0:
 		health = 0
 		get_tree().change_scene_to_file("res://szenen/deathscreen.tscn")
-
-func player():
-	pass
 
 
 func _on_player_hitbox_body_entered(body):
@@ -76,9 +71,10 @@ func _on_cooldown_timeout():
 func update_health():
 	var player_health = $player_health
 	player_health.value = health
-	
-	
 
+
+func player():
+	pass
 
 
 
