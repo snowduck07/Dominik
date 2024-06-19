@@ -3,8 +3,11 @@ extends CharacterBody2D
 var speed = 100
 var chase = false
 var player = null
+var health = 100
 
 func _physics_process(delta):
+	update_health()
+
 	if chase:
 		$AnimatedSprite2D.play("aggressive")
 		
@@ -32,3 +35,13 @@ func _on_detection_area_body_exited(body):
 
 func enemy():
 	pass
+
+func update_health():
+	var enemy_health = $enemy_health
+	
+	enemy_health.value = health
+	
+	
+	
+	
+	

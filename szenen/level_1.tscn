@@ -768,4 +768,4 @@ metadata/_edit_use_anchors_ = true
 position = Vector2(528, 280)
 
 [node name="enemy" parent="." instance=ExtResource("5_0pbuq")]
-position = Vector2(1264, 528)
+position = Vector2(1280, 528)

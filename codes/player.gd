@@ -12,7 +12,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 
 func _physics_process(delta):
-
+	update_health()
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
@@ -70,3 +70,21 @@ func enemy_attack():
 
 func _on_cooldown_timeout():
 	damage_cooldown = true
+	
+
+
+func update_health():
+	var player_health = $player_health
+	player_health.value = health
+	
+	
+
+
+
+
+
+
+
+
+
+
